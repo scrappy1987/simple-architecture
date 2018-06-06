@@ -1,0 +1,26 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+
+# NOTE***** Static content should be listed at the end of the file******
+
+# ~~~~
+
+# DYNAMIC CONTENT
+
+GET         /project                   endpoint.ProjectsEndpoint.list()
+GET         /project/:id               endpoint.ProjectsEndpoint.find(id: Long)
+POST        /project                   endpoint.ProjectsEndpoint.create()
+PUT         /project                   endpoint.ProjectsEndpoint.update()
+DELETE      /project/:id               endpoint.ProjectsEndpoint.delete(id: Long)
+
+#STATIC CONTENT
+
+# Home page
+GET         /                          controllers.Assets.at(path="/public/webapp", file="index.html")
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /*file                     controllers.Assets.versioned(path="/public/webapp", file: Asset)
+
+
+
+
